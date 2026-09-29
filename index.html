@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rohan Bahule | Full-stack developer</title>
+<meta name="description" content="Portfolio of Rohan Bahule, a Computer Engineering student at PICT, Pune who builds full-stack apps and a C++ order book matching engine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--surf:#fff;--ink:#14213a;--mute:#5a6780;--line:#d3dae6;--acc:#1f5fd6;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Source Sans 3','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff}}
+:root[data-theme="dark"]{--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 var(--body)}
+a{color:var(--acc)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:20px;height:64px;overflow-x:auto}
+nav .logo{font:800 20px var(--head);color:var(--ink);text-decoration:none;margin-right:auto;white-space:nowrap}
+nav a.l{color:var(--mute);text-decoration:none;font-size:16px;white-space:nowrap}
+nav a.l:hover{color:var(--ink)}
+button,.btn{font:600 16px var(--body);border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:9px 16px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.p{background:var(--ink);color:var(--bg)}
+button:hover,.btn:hover{border-color:var(--acc)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+h1{font-size:clamp(46px,8vw,88px);font-weight:800;letter-spacing:-.03em}
+h2{font-size:34px;font-weight:700;margin-bottom:28px;letter-spacing:-.02em}
+h3{font-size:22px;font-weight:700}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.hero{padding:72px 0 64px}
+.hero p.lead{font-size:24px;max-width:34ch;margin:20px 0 10px}
+.hero p.sub{color:var(--mute);max-width:46ch;margin:0 0 26px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.about{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:stretch}
+.mewrap{position:relative;min-height:300px}
+.me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);background:#fff;display:block}
+.about p{margin:0 0 16px;max-width:60ch}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin:0;align-self:start;border:1px solid var(--line);background:var(--surf);padding:20px;border-radius:10px;margin-top:24px}
+dt{color:var(--mute)}dd{margin:0;font-weight:600}
+.item{padding:22px 0;border-top:1px solid var(--line)}.item:first-of-type{border-top:0;padding-top:0}
+.meta{color:var(--mute);font-size:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+ul{margin:12px 0 0;padding-left:20px}li{margin-bottom:6px;max-width:75ch}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tags span{font:13px var(--mono);border:1px solid var(--line);background:var(--surf);border-radius:4px;padding:2px 8px}
+.proj{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:26px;margin-bottom:20px}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:14px 20px}.skills dt{font-weight:600;color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);font-size:15px}
+@media(max-width:800px){.hero,.about,.two{grid-template-columns:1fr}.mewrap{max-width:280px;aspect-ratio:4/5}.skills{grid-template-columns:1fr}.skills dt{margin-top:8px}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Rohan Bahule</a>
+<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#projects">Projects</a><a class="l" href="#skills">Skills</a><a class="l" href="#education">Education</a><a class="l" href="#beyond">Beyond</a><a class="l" href="#contact">Contact</a>
+<button id="theme" aria-label="Toggle light and dark theme">Theme</button>
+</nav></div></header>
+
+<main class="wrap" id="top">
+<div class="hero">
+  <div>
+    <h1>Rohan Bahule</h1>
+    <p class="lead">Full-stack developer who wrote a stock exchange matching engine.</p>
+    <p class="sub">Computer Engineering student at PICT, Pune with a 9.02 CGPA and 600+ DSA problems solved. I build with React, Node.js and C++.</p>
+    <div class="row"><a class="btn p" href="mailto:rohanbahule90@gmail.com">Email me</a><a class="btn" href="#projects">See projects</a></div>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="about">
+    <div class="mewrap"><img class="me" src="assets/my_portfolio_image.jpeg" alt="Portrait of Rohan Bahule" width="440" height="550"></div>
+    <div>
+      <p>I'm Rohan Bahule, Computer Engineering student at PICT, Pune. I like building practical web applications end to end, and I like understanding how the systems underneath them behave.</p>
+      <p>Recently that meant a constraint-based timetable engine for my college, a healthcare booking platform, and an order book matching engine in C++ that processes 100,000+ orders.</p>
+      <dl><dt>Degree</dt><dd>B.E. Computer Engineering</dd><dt>College</dt><dd>PICT, Pune</dd><dt>CGPA</dt><dd>9.02 / 10</dd><dt>DSA</dt><dd>600+ problems</dd><dt>MHT-CET</dt><dd>99.45 percentile (PCM)</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="item">
+    <div class="meta"><h3 style="color:var(--ink)">Research Intern, PICT</h3><span>Jan 2026 – Apr 2026 · Pune, India</span></div>
+    <ul>
+      <li>Engineered a constraint-based timetable engine in Node.js and Express.js, using 3-phase scheduling with 100 randomized retries to produce conflict-free schedules.</li>
+      <li>Built a normalized MySQL and Sequelize backend with transactional persistence and REST APIs for academic data and timetable management.</li>
+      <li>Developed a React.js frontend with 4 timetable perspectives, drag-and-drop editing, immutable revisions and PDF export.</li>
+    </ul>
+    <div class="tags"><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>Sequelize</span><span>React.js</span></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/automatic-college-timetable-generator" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="proj">
+    <h3>DocBook: Healthcare Appointment Platform</h3>
+    <ul>
+      <li>Multi-role platform with JWT authentication, role-based authorization and separate Admin, Doctor and Patient dashboards.</li>
+      <li>Scheduling with dynamic 30-minute slots, configurable doctor availability, blocked slots and double-booking prevention.</li>
+      <li>Automated reminders using Node Cron and Nodemailer, with eligibility checks and retry-safe email delivery.</li>
+      <li>Razorpay payments and refunds with secure verification, plus a feedback and rating system that blocks duplicate reviews.</li>
+    </ul>
+    <div class="tags"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Razorpay</span></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/doctor-appointment-booking-system" target="_blank" rel="noopener">GitHub</a></div>
+  </article>
+  <article class="proj">
+    <h3>Order Book Matching Engine</h3>
+    <ul>
+      <li>Price-time priority (FIFO) engine in C++ that simulates real exchange order flow for buy and sell orders.</li>
+      <li>STL map and deque per side give O(log n) insertion and best-price lookup with automatic price-level sorting.</li>
+      <li>Partial fills across 3 cases: full match, resting-order partial and incoming-order partial.</li>
+      <li>Cancellation through an unordered_map index for O(1) side lookup. Processes a 100,000+ order CSV stream and writes executed trades with a run summary.</li>
+    </ul>
+    <div class="tags"><span>C++</span><span>STL</span><span>OOP</span><span>Data structures</span></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/order-matching-engine" target="_blank" rel="noopener">GitHub</a></div>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills" style="border:0;padding:0;background:none">
+    <dt>Languages</dt><dd>C++, Python, SQL, JavaScript</dd>
+    <dt>Frontend</dt><dd>React.js, Redux Toolkit, Vite</dd>
+    <dt>Backend</dt><dd>Node.js, Express.js, REST APIs</dd>
+    <dt>Databases</dt><dd>MySQL, MongoDB</dd>
+    <dt>Core concepts</dt><dd>OOP, DSA, DBMS, OS, Computer Networks</dd>
+  </dl>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="item"><div class="meta"><h3 style="color:var(--ink)">Pune Institute of Computer Technology, Pune</h3><span>Aug 2023 – May 2027</span></div><div class="meta"><span>Bachelor of Engineering in Computer Engineering</span><b>CGPA: 9.02 / 10</b></div></div>
+  <div class="item"><div class="meta"><h3 style="color:var(--ink)">Mahale Kanishth Mahavidyalaya</h3><span>Jun 2021 – Mar 2023</span></div><div class="meta"><span>HSC (Science)</span><b>75.00%</b></div></div>
+  <div class="item"><div class="meta"><h3 style="color:var(--ink)">S. J. Patni Vidyalaya</h3><span>Jun 2016 – Mar 2021</span></div><div class="meta"><span>SSC</span><b>88.20%</b></div></div>
+</section>
+
+<section id="beyond">
+  <h2>Beyond code</h2>
+  <div class="two">
+    <div><h3>Achievements</h3><ul><li>Solved 600+ Data Structures and Algorithms problems across LeetCode and GeeksforGeeks.</li><li>MHT-CET: 99.45 percentile (PCM).</li></ul></div>
+    <div><h3>Extracurricular</h3><ul><li>Active member of PISB IEEE.</li><li>Volunteered for Credenz Group Day.</li></ul></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Get in touch</h2>
+  <p style="max-width:52ch">The quickest way to reach me is email. I read everything.</p>
+  <div class="row"><a class="btn p" href="mailto:rohanbahule90@gmail.com">rohanbahule90@gmail.com</a><a class="btn" href="tel:+917499872230">+91 7499872230</a></div>
+</section>
+</main>
+<footer><div class="wrap">Rohan Bahule · Pune, India</div></footer>
+
+<script>
+(function(){
+var r=document.documentElement,t=document.getElementById('theme');
+try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+t.onclick=function(){var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}};
+})();
+</script>
+</body>
+</html>
