@@ -3,15 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Rohan Bahule | Full-stack developer</title>
-<meta name="description" content="Portfolio of Rohan Bahule, a Computer Engineering student at PICT, Pune who builds full-stack apps and a C++ order book matching engine.">
+<title>Rohan Bahule</title>
+<meta name="description" content="Rohan Bahule, Computer Engineering student at PICT, Pune. Full-stack developer working with React, Node.js and C++. View projects and experience.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rohan Bahule | Full-stack developer">
+<meta property="og:description" content="Computer Engineering student at PICT, Pune. React, Node.js, C++ and 600+ DSA problems solved.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314213a'/%3E%3Ctext x='50' y='66' font-size='52' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3ERB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef1f6;--surf:#fff;--ink:#14213a;--mute:#5a6780;--line:#d3dae6;--acc:#1f5fd6;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Source Sans 3','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff}}
-:root[data-theme="dark"]{--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff}
+:root{--bg:#eef1f6;--surf:#fff;--ink:#14213a;--mute:#5a6780;--line:#d3dae6;--acc:#1f5fd6;--ok:#12805c;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Source Sans 3','Segoe UI',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff;--ok:#3fd19b}}
+:root[data-theme="dark"]{--bg:#0f1a2e;--surf:#16243c;--ink:#e8edf7;--mute:#98a6c0;--line:#28385a;--acc:#6ea2ff;--ok:#3fd19b}
 html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 var(--body)}
@@ -21,8 +25,8 @@ a{color:var(--acc)}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;gap:20px;height:64px;overflow-x:auto}
 nav .logo{font:800 20px var(--head);color:var(--ink);text-decoration:none;margin-right:auto;white-space:nowrap}
-nav a.l{color:var(--mute);text-decoration:none;font-size:16px;white-space:nowrap}
-nav a.l:hover{color:var(--ink)}
+nav a.l{color:var(--mute);text-decoration:none;font-size:16px;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+nav a.l:hover,nav a.l.on{color:var(--ink);border-bottom-color:var(--acc)}
 button,.btn{font:600 16px var(--body);border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:9px 16px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block}
 .btn.p{background:var(--ink);color:var(--bg)}
 button:hover,.btn:hover{border-color:var(--acc)}
@@ -32,9 +36,12 @@ h2{font-size:34px;font-weight:700;margin-bottom:28px;letter-spacing:-.02em}
 h3{font-size:22px;font-weight:700}
 section{padding:72px 0;border-top:1px solid var(--line)}
 .hero{padding:72px 0 64px}
+.status{display:inline-flex;align-items:center;gap:8px;font:14px var(--mono);border:1px solid var(--line);background:var(--surf);border-radius:99px;padding:4px 14px;margin-bottom:22px}
+.status:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ok)}
 .hero p.lead{font-size:24px;max-width:34ch;margin:20px 0 10px}
-.hero p.sub{color:var(--mute);max-width:46ch;margin:0 0 26px}
+.hero p.sub{color:var(--mute);max-width:52ch;margin:0 0 26px}
 .row{display:flex;gap:12px;flex-wrap:wrap}
+.links{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px}.links a{font-weight:600}
 .about{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:stretch}
 .mewrap{position:relative;min-height:300px}
 .me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);background:#fff;display:block}
@@ -45,11 +52,13 @@ dt{color:var(--mute)}dd{margin:0;font-weight:600}
 .meta{color:var(--mute);font-size:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 ul{margin:12px 0 0;padding-left:20px}li{margin-bottom:6px;max-width:75ch}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.tags span{font:13px var(--mono);border:1px solid var(--line);background:var(--surf);border-radius:4px;padding:2px 8px}
+.tags span{font:13px var(--mono);border:1px solid var(--line);background:var(--surf);border-radius:4px;padding:2px 8px;font-weight:400}
 .proj{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:26px;margin-bottom:20px}
-.skills{display:grid;grid-template-columns:150px 1fr;gap:14px 20px}.skills dt{font-weight:600;color:var(--ink)}
+.sum{color:var(--mute);margin:8px 0 0;max-width:62ch}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:14px 20px;border:0;padding:0;background:none;margin-top:0}.skills dt{font-weight:600;color:var(--ink)}.skills .tags{margin-top:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:800px){.hero,.about,.two{grid-template-columns:1fr}.mewrap{max-width:280px;aspect-ratio:4/5}.skills{grid-template-columns:1fr}.skills dt{margin-top:8px}section{padding:52px 0}}
 </style>
 </head>
@@ -63,10 +72,12 @@ footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);fo
 <main class="wrap" id="top">
 <div class="hero">
   <div>
+    <span class="status">Open to full-time Software Engineer roles · Class of 2027</span>
     <h1>Rohan Bahule</h1>
-    <p class="lead">Full-stack developer who wrote a stock exchange matching engine.</p>
-    <p class="sub">Computer Engineering student at PICT, Pune with a 9.02 CGPA and 600+ DSA problems solved. I build with React, Node.js and C++.</p>
+    <p class="lead">Full-stack developer who builds web apps and a C++ order matching engine.</p>
+    <p class="sub">Computer Engineering student at PICT, Pune (CGPA 9.02). I work with C++, React, Node.js and Express.js, and have solved 600+ DSA problems.</p>
     <div class="row"><a class="btn p" href="mailto:rohanbahule90@gmail.com">Email me</a><a class="btn" href="#projects">See projects</a></div>
+    <div class="links"><a href="https://github.com/rohan-bahule" target="_blank" rel="noopener">GitHub</a></div>
   </div>
 </div>
 
@@ -86,13 +97,14 @@ footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);fo
   <h2>Experience</h2>
   <div class="item">
     <div class="meta"><h3 style="color:var(--ink)">Research Intern, PICT</h3><span>Jan 2026 – Apr 2026 · Pune, India</span></div>
+    <p class="sum">Automatic college timetable generator used to create conflict-free schedules.</p>
     <ul>
-      <li>Engineered a constraint-based timetable engine in Node.js and Express.js, using 3-phase scheduling with 100 randomized retries to produce conflict-free schedules.</li>
-      <li>Built a normalized MySQL and Sequelize backend with transactional persistence and REST APIs for academic data and timetable management.</li>
-      <li>Developed a React.js frontend with 4 timetable perspectives, drag-and-drop editing, immutable revisions and PDF export.</li>
+      <li>Engineered a constraint-based timetable engine in Node.js/Express.js using custom heuristics to generate conflict-free schedules.</li>
+      <li>Built a normalized MySQL + Sequelize backend comprising 10 relational models and REST APIs for academic data and timetable management.</li>
+      <li>Developed a React.js frontend with 4 timetable perspectives, drag-and-drop editing, immutable revisions, and PDF export.</li>
     </ul>
     <div class="tags"><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>Sequelize</span><span>React.js</span></div>
-    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/automatic-college-timetable-generator" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/automatic-college-timetable-generator" target="_blank" rel="noopener">View code on GitHub</a></div>
   </div>
 </section>
 
@@ -100,42 +112,44 @@ footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);fo
   <h2>Projects</h2>
   <article class="proj">
     <h3>DocBook: Healthcare Appointment Platform</h3>
+    <p class="sum">MERN app where patients book doctors, pay online and get reminders.</p>
     <ul>
-      <li>Multi-role platform with JWT authentication, role-based authorization and separate Admin, Doctor and Patient dashboards.</li>
-      <li>Scheduling with dynamic 30-minute slots, configurable doctor availability, blocked slots and double-booking prevention.</li>
-      <li>Automated reminders using Node Cron and Nodemailer, with eligibility checks and retry-safe email delivery.</li>
-      <li>Razorpay payments and refunds with secure verification, plus a feedback and rating system that blocks duplicate reviews.</li>
+      <li>Built a multi-role healthcare appointment platform with JWT authentication, role-based authorization, and dedicated Admin, Doctor, and Patient dashboards for secure appointment and profile management.</li>
+      <li>Engineered an intelligent appointment scheduling system with dynamic 30-minute slot generation, configurable doctor availability, blocked-slot management, and double-booking prevention.</li>
+      <li>Implemented automated appointment reminders using Node Cron and Nodemailer, with scheduled processing, eligibility checks, and retry-safe email delivery.</li>
+      <li>Integrated Razorpay payments and refunds with secure payment verification and refund processing, and built a feedback &amp; rating system with duplicate-review prevention and rating aggregation.</li>
     </ul>
-    <div class="tags"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Razorpay</span></div>
-    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/doctor-appointment-booking-system" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="tags"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Cloudinary</span><span>Razorpay</span></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/doctor-appointment-booking-system" target="_blank" rel="noopener">View code on GitHub</a></div>
   </article>
   <article class="proj">
     <h3>Order Book Matching Engine</h3>
+    <p class="sum">C++ engine that matches buy and sell orders by price-time priority.</p>
     <ul>
-      <li>Price-time priority (FIFO) engine in C++ that simulates real exchange order flow for buy and sell orders.</li>
-      <li>STL map and deque per side give O(log n) insertion and best-price lookup with automatic price-level sorting.</li>
-      <li>Partial fills across 3 cases: full match, resting-order partial and incoming-order partial.</li>
-      <li>Cancellation through an unordered_map index for O(1) side lookup. Processes a 100,000+ order CSV stream and writes executed trades with a run summary.</li>
+      <li>Designed a price-time priority matching engine in C++ simulating real exchange order flow for buy/sell orders.</li>
+      <li>Used C++ STL map and deque for buy/sell order books, achieving O(log n) insertion and best-price lookup with automatic price-level sorting.</li>
+      <li>Implemented partial fill handling across 3 cases (full match, resting-order partial, incoming-order partial) with correct quantity reduction and order lifecycle management.</li>
+      <li>Added order cancellation with unordered_map index for O(1) side lookup; processed a 100,000+ order CSV stream, writing executed trades with a full run summary.</li>
     </ul>
-    <div class="tags"><span>C++</span><span>STL</span><span>OOP</span><span>Data structures</span></div>
-    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/order-matching-engine" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="tags"><span>C++</span><span>STL</span><span>OOP</span><span>Data structures</span><span>Algorithm Design</span></div>
+    <div class="row" style="margin-top:16px"><a class="btn" href="https://github.com/rohan-bahule/order-matching-engine" target="_blank" rel="noopener">View code on GitHub</a></div>
   </article>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <dl class="skills" style="border:0;padding:0;background:none">
-    <dt>Languages</dt><dd>C++, Python, SQL, JavaScript</dd>
-    <dt>Frontend</dt><dd>React.js, Redux Toolkit, Vite</dd>
-    <dt>Backend</dt><dd>Node.js, Express.js, REST APIs</dd>
-    <dt>Databases</dt><dd>MySQL, MongoDB</dd>
-    <dt>Core concepts</dt><dd>OOP, DSA, DBMS, OS, Computer Networks</dd>
+  <dl class="skills">
+    <dt>Languages</dt><dd class="tags"><span>C++</span><span>SQL</span><span>Java</span><span>JavaScript</span></dd>
+    <dt>Frontend</dt><dd class="tags"><span>React.js</span><span>Redux Toolkit</span><span>Vite</span></dd>
+    <dt>Backend</dt><dd class="tags"><span>Node.js</span><span>Express.js</span><span>REST APIs</span></dd>
+    <dt>Databases</dt><dd class="tags"><span>MySQL</span><span>MongoDB</span></dd>
+    <dt>Core concepts</dt><dd class="tags"><span>OOP</span><span>DSA</span><span>DBMS</span><span>OS</span><span>Computer Networks</span></dd>
   </dl>
 </section>
 
 <section id="education">
   <h2>Education</h2>
-  <div class="item"><div class="meta"><h3 style="color:var(--ink)">Pune Institute of Computer Technology, Pune</h3><span>Aug 2023 – May 2027</span></div><div class="meta"><span>Bachelor of Engineering in Computer Engineering</span><b>CGPA: 9.02 / 10</b></div></div>
+  <div class="item"><div class="meta"><h3 style="color:var(--ink)">Pune Institute of Computer Technology, Pune</h3><span>Aug 2023 – Jun 2027</span></div><div class="meta"><span>Bachelor of Engineering in Computer Engineering</span><b>CGPA: 9.02 / 10</b></div></div>
   <div class="item"><div class="meta"><h3 style="color:var(--ink)">Mahale Kanishth Mahavidyalaya</h3><span>Jun 2021 – Mar 2023</span></div><div class="meta"><span>HSC (Science)</span><b>75.00%</b></div></div>
   <div class="item"><div class="meta"><h3 style="color:var(--ink)">S. J. Patni Vidyalaya</h3><span>Jun 2016 – Mar 2021</span></div><div class="meta"><span>SSC</span><b>88.20%</b></div></div>
 </section>
@@ -150,17 +164,22 @@ footer{padding:36px 0 48px;color:var(--mute);border-top:1px solid var(--line);fo
 
 <section id="contact">
   <h2>Get in touch</h2>
-  <p style="max-width:52ch">The quickest way to reach me is email. I read everything.</p>
-  <div class="row"><a class="btn p" href="mailto:rohanbahule90@gmail.com">rohanbahule90@gmail.com</a><a class="btn" href="tel:+917499872230">+91 7499872230</a></div>
+  <p style="max-width:52ch">I'm open to full-time Software Engineer roles. The quickest way to reach me is email.</p>
+  <div class="row"><a class="btn p" href="mailto:rohanbahule90@gmail.com">rohanbahule90@gmail.com</a><a class="btn" href="tel:+917499872230">+91 7499872230</a><a class="btn" href="https://github.com/rohan-bahule" target="_blank" rel="noopener">GitHub</a></div>
 </section>
 </main>
-<footer><div class="wrap">Rohan Bahule · Pune, India</div></footer>
+<footer><div class="wrap"><span>Rohan Bahule · Pune, India</span><a href="#top">Back to top</a></div></footer>
 
 <script>
 (function(){
 var r=document.documentElement,t=document.getElementById('theme');
 try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
 t.onclick=function(){var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}};
+var links=document.querySelectorAll('nav a.l');
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+ document.querySelectorAll('main section[id]').forEach(function(sec){io.observe(sec)});
+}
 })();
 </script>
 </body>
